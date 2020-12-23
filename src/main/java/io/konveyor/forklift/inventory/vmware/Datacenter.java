@@ -1,6 +1,7 @@
-package io.konveyor.forklift;
+package io.konveyor.forklift.inventory.vmware;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -9,5 +10,10 @@ public class Datacenter extends PanacheEntity {
     
     public String Name;
 
-    
+    @ManyToOne
+    public VCenter vCenter;
+
+    @ManyToOne
+    public Folder folder;
+
 }

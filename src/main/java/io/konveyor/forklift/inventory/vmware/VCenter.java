@@ -1,4 +1,4 @@
-package io.konveyor.forklift;
+package io.konveyor.forklift.inventory.vmware;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package io.konveyor.forklift;
+package io.konveyor.forklift.inventory.vmware;
 
 import java.util.List;
 
@@ -12,22 +12,22 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/vcenter")
-public class VCenterResource {
-
+@Path("/disks")
+public class DiskResource {
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VCenter> vCenters() {
-        return VCenter.listAll();
+    public List<Disk> Disks() {
+        return Disk.listAll();
     }
 
     @Transactional
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response newVCenter(VCenter vCenter) {
-        vCenter.id = null;
-        vCenter.persist();
-        return Response.status(Status.CREATED).entity(vCenter).build();
+    public Response newDisk(Disk disk) {
+        disk.id = null;
+        disk.persist();
+        return Response.status(Status.CREATED).entity(disk).build();
     }
 }
